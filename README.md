@@ -4,8 +4,8 @@ Pembuatan konten media sosial yang menampilkan potongan kode (HTML, CSS, JavaScr
 
 ## CodeShare #1 - Pixel Loading
 
-**Source Code:** https://github.com/hmpstrplpolmed/code-share/blob/main/pixel-loading.html  
-**Demo:** https://hmpstrplpolmed.github.io/code-share/pixel-loading
+**Source Code:** <a href="https://github.com/hmpstrplpolmed/code-share/blob/main/pixel-loading.html" target="_blank">https://github.com/hmpstrplpolmed/code-share/blob/main/pixel-loading.html</a>  
+**Demo:** <a href="https://hmpstrplpolmed.github.io/code-share/pixel-loading" target="_blank">https://hmpstrplpolmed.github.io/code-share/pixel-loading</a>
 
 ### HTML
 
