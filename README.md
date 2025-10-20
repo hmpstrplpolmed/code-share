@@ -118,7 +118,7 @@ setInterval(() => {
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
-    <title>Profile Hover Challange Farid</title>
+    <title>Profile Hover</title>
   </head>
   <body>
     <div class="wrapper">
