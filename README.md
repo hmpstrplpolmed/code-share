@@ -68,34 +68,34 @@ Pembuatan konten media sosial yang menampilkan potongan kode (HTML, CSS, JavaScr
 ### JavaScript
 
 ```javascript
-const fills = []
+const fills = [];
 for (let num = 1; num <= 8; num++) {
-  const element = document.querySelector(`[data-order="${num}"]`)
+  const element = document.querySelector(`[data-order="${num}"]`);
   if (element) {
-    fills.push(element)
+    fills.push(element);
   }
 }
-const delayBetweenElements = 200
-const activeDuration = 400
-const intervalDuration = 1600
+const delayBetweenElements = 200;
+const activeDuration = 400;
+const intervalDuration = 1600;
 fills.forEach((el, i) => {
   setTimeout(() => {
-    el.classList.add('black')
+    el.classList.add("black");
     setTimeout(() => {
-      el.classList.remove('black')
-    }, activeDuration)
-  }, delayBetweenElements * i)
-})
+      el.classList.remove("black");
+    }, activeDuration);
+  }, delayBetweenElements * i);
+});
 setInterval(() => {
   fills.forEach((el, i) => {
     setTimeout(() => {
-      el.classList.add('black')
+      el.classList.add("black");
       setTimeout(() => {
-        el.classList.remove('black')
-      }, activeDuration)
-    }, delayBetweenElements * i)
-  })
-}, intervalDuration)
+        el.classList.remove("black");
+      }, activeDuration);
+    }, delayBetweenElements * i);
+  });
+}, intervalDuration);
 ```
 
 ## CodeShare #2 - Profile Hover
@@ -123,27 +123,53 @@ setInterval(() => {
   <body>
     <div class="wrapper">
       <div class="outside">
-        <img src="./logo-codify-dark.png" alt="Profile" class="profile profile-outside" />
+        <img
+          src="./logo-codify-dark.png"
+          alt="Profile"
+          class="profile profile-outside"
+        />
         <div class="triangle"></div>
       </div>
       <div class="card">
         <div class="header">
-          <a href="https://www.instagram.com/codifyacademy.id" target="_blank" rel="noopener noreferrer" class="user">
-            <img src="./logo-codify-dark.png" alt="Profile" class="profile profile-inside" />
+          <a
+            href="https://www.instagram.com/codifyacademy.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="user"
+          >
+            <img
+              src="./logo-codify-dark.png"
+              alt="Profile"
+              class="profile profile-inside"
+            />
             <div class="name">
-              <span class="nickname">Codify Academy</span> <span class="username">@codifyacademy.id</span>
+              <span class="nickname">Codify Academy</span>
+              <span class="username">@codifyacademy.id</span>
             </div>
           </a>
           <button>Follow</button>
         </div>
         <div class="main-text">
-          Part of <a href="https://www.instagram.com/hmpstrpl.polmed" target="_blank">@hmpstrpl.polmed</a><br />
+          Part of
+          <a href="https://www.instagram.com/hmpstrpl.polmed" target="_blank"
+            >@hmpstrpl.polmed</a
+          ><br />
           Science and Technology Division of HMPS TRPL<br />
-          🌐 <a href="https://hmpstrplpolmed.com" target="_blank" class="website">hmpstrplpolmed.com</a>
+          🌐
+          <a href="https://hmpstrplpolmed.com" target="_blank" class="website"
+            >hmpstrplpolmed.com</a
+          >
         </div>
         <div class="follow">
-          <div><span class="text">Followers</span> <span class="number">198,549</span></div>
-          <div><span class="text">Following</span> <span class="number">4,513</span></div>
+          <div>
+            <span class="text">Followers</span>
+            <span class="number">198,549</span>
+          </div>
+          <div>
+            <span class="text">Following</span>
+            <span class="number">4,513</span>
+          </div>
         </div>
       </div>
     </div>
@@ -154,7 +180,6 @@ setInterval(() => {
 ### CSS
 
 ```css
-/* CSS Reset */
 *::before,
 *::after {
   box-sizing: border-box;
@@ -167,7 +192,7 @@ setInterval(() => {
 /* General Style */
 body,
 button {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   background-color: #6c49f6;
 }
 body {
