@@ -100,8 +100,8 @@ setInterval(() => {
 
 ## CodeShare #2 - Profile Hover
 
-**Source Code:** <a href="https://github.com/hmpstrplpolmed/code-share/blob/main/profil-hover.html" target="_blank">https://github.com/hmpstrplpolmed/code-share/blob/main/profil-hover.html</a>  
-**Demo:** <a href="https://hmpstrplpolmed.github.io/code-share/profil-hover" target="_blank">https://hmpstrplpolmed.github.io/code-share/profil-hover</a>
+**Source Code:** <a href="https://github.com/hmpstrplpolmed/code-share/blob/main/profile-hover.html" target="_blank">https://github.com/hmpstrplpolmed/code-share/blob/main/profile-hover.html</a>  
+**Demo:** <a href="https://hmpstrplpolmed.github.io/code-share/profile-hover" target="_blank">https://hmpstrplpolmed.github.io/code-share/profile-hover</a>
 
 ### HTML
 
