@@ -2,6 +2,10 @@
 
 Pembuatan konten media sosial yang menampilkan potongan kode (HTML, CSS, JavaScript, dll.) beserta tampilannya, ditujukan untuk berbagi pengetahuan dasar pemrograman dan inspirasi sederhana yang mudah dipraktikkan.
 
+- [Codeshare 1 - Pixel Loading](#codeshare-1---pixel-loading)
+- [Codeshare 2 - Profile Hover](#codeshare-2---profile-hover)
+- [Codeshare 3 - Bulb](#codeshare-3---bulb)
+
 ## CodeShare #1 - Pixel Loading
 
 **Source Code:** <a href="https://github.com/hmpstrplpolmed/code-share/blob/main/pixel-loading.html" target="_blank">https://github.com/hmpstrplpolmed/code-share/blob/main/pixel-loading.html</a>  
