@@ -306,3 +306,211 @@ body {
   font-size: 22px;
 }
 ```
+
+## CodeShare #3 - Bulb
+
+**Source Code:** <a href="https://github.com/hmpstrplpolmed/code-share/blob/main/bulb.html" target="_blank">https://github.com/hmpstrplpolmed/code-share/blob/main/bulb.html</a>  
+**Demo:** <a href="https://hmpstrplpolmed.github.io/code-share/bulb" target="_blank">https://hmpstrplpolmed.github.io/code-share/bulb</a>
+
+### HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lamp</title>
+  </head>
+  <body>
+    <div class="lamp-wrapper">
+      <div class="ceiling-cord"></div>
+      <div class="socket"></div>
+      <div class="bulb" id="bulb">
+        <div class="filament"></div>
+      </div>
+      <div class="pull-cord" id="rope">
+        <div class="handle"></div>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+### CSS
+
+```css
+:root {
+  --gold-dark: #b8860b;
+  --gold-light: #ffd700;
+  --cord-color: #3e2723;
+  --off-bg: #1a1a1a;
+  --on-bg-center: #fffbd5;
+  --on-bg-edge: #dcdcdc;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--off-bg);
+  transition: background-color 0.8s ease;
+  overflow: hidden;
+}
+body.light-on {
+  background: radial-gradient(
+    circle at 50% 30%,
+    #fdfbf7 0%,
+    #e0e0e0 40%,
+    #a6a6a6 100%
+  );
+}
+.lamp-wrapper {
+  position: relative;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: swing 3s infinite ease-in-out alternate;
+  transform-origin: top center;
+}
+.ceiling-cord {
+  width: 4px;
+  height: 100px;
+  background-color: #222;
+}
+.socket {
+  width: 50px;
+  height: 40px;
+  background: linear-gradient(
+    90deg,
+    var(--gold-dark),
+    var(--gold-light),
+    var(--gold-dark)
+  );
+  border-radius: 5px 5px 15px 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.bulb {
+  position: relative;
+  width: 80px;
+  height: 110px;
+  margin-top: -5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+.bulb.on {
+  background: rgba(255, 240, 150, 0.6);
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.6), 0 0 100px rgba(255, 215, 0, 0.4),
+    inset 0 0 40px rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.filament {
+  position: absolute;
+  top: 20%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(100, 100, 100, 0.5);
+  border-bottom: none;
+  border-radius: 50% 50% 0 0;
+  transition: all 0.3s;
+}
+.filament::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  border-bottom: 2px solid rgba(100, 100, 100, 0.5);
+  border-radius: 50%;
+}
+.bulb.on .filament,
+.bulb.on .filament::after {
+  border-color: #fff;
+  box-shadow: 0 0 10px #ff9800;
+}
+.pull-cord {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(25px);
+  width: 2px;
+  height: 120px;
+  background: repeating-linear-gradient(
+    45deg,
+    #5d4037,
+    #5d4037 2px,
+    #3e2723 2px,
+    #3e2723 4px
+  );
+  cursor: pointer;
+  transform-origin: top center;
+  transition: height 0.2s;
+}
+.handle {
+  position: absolute;
+  bottom: -25px;
+  left: -6px;
+  width: 14px;
+  height: 25px;
+  background: linear-gradient(to bottom, var(--gold-light), var(--gold-dark));
+  border-radius: 40%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.pull-anim {
+  animation: pullString 0.6s ease-out;
+}
+@keyframes pullString {
+  0% {
+    transform: translateX(25px) scaleY(1);
+  }
+  40% {
+    transform: translateX(25px) scaleY(1.3);
+  }
+  60% {
+    transform: translateX(25px) scaleY(0.9);
+  }
+  100% {
+    transform: translateX(25px) scaleY(1);
+  }
+}
+@keyframes swing {
+  from {
+    transform: rotate(-1deg);
+  }
+  to {
+    transform: rotate(1deg);
+  }
+}
+```
+
+### JS
+
+```js
+const rope = document.getElementById("rope");
+const bulb = document.getElementById("bulb");
+const body = document.body;
+const clickSound = new Audio(
+  "https://www.soundjay.com/button/sounds/button-3.mp3"
+);
+
+rope.addEventListener("click", function () {
+  rope.classList.remove("pull-anim");
+  void rope.offsetWidth;
+  rope.classList.add("pull-anim");
+
+  setTimeout(() => {
+    bulb.classList.toggle("on");
+    body.classList.toggle("light-on");
+  }, 200);
+});
+```
