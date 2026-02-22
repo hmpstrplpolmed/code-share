@@ -1,10 +1,24 @@
+
 # Code-Share
 
 Pembuatan konten media sosial yang menampilkan potongan kode (HTML, CSS, JavaScript, dll.) beserta tampilannya, ditujukan untuk berbagi pengetahuan dasar pemrograman dan inspirasi sederhana yang mudah dipraktikkan.
 
-- [Codeshare 1 - Pixel Loading](#codeshare-1---pixel-loading)
-- [Codeshare 2 - Profile Hover](#codeshare-2---profile-hover)
-- [Codeshare 3 - Bulb](#codeshare-3---bulb)
+- [Code-Share](#code-share)
+  - [CodeShare #1 - Pixel Loading](#codeshare-1---pixel-loading)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [JavaScript](#javascript)
+  - [CodeShare #2 - Profile Hover](#codeshare-2---profile-hover)
+    - [HTML](#html-1)
+    - [CSS](#css-1)
+  - [CodeShare #3 - Bulb](#codeshare-3---bulb)
+    - [HTML](#html-2)
+    - [CSS](#css-2)
+    - [JS](#js)
+  - [CodeShare #4 - Infinite Auto Carousel](#codeshare-4---infinite-auto-carousel)
+    - [HTML](#html-3)
+    - [CSS](#css-3)
+    - [JavaScript](#javascript-1)
 
 ## CodeShare #1 - Pixel Loading
 
@@ -517,4 +531,154 @@ rope.addEventListener("click", function () {
     body.classList.toggle("light-on");
   }, 200);
 });
+```
+
+## CodeShare #4 - Infinite Auto Carousel
+
+**Source Code:** <a href="https://github.com/hmpstrplpolmed/code-share/blob/main/infinite-auto-carousel.html" target="_blank">https://github.com/hmpstrplpolmed/code-share/blob/main/infinite-auto-carousel.html</a>  
+**Demo:** <a href="https://hmpstrplpolmed.github.io/code-share/infinite-auto-carousel" target="_blank">https://hmpstrplpolmed.github.io/code-share/infinite-auto-carousel</a>
+
+### HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Auto Carousel</title>
+</head>
+<body>
+    <div class="image-container">
+        <div class="inner-content">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://cdn1.epicgames.com/spt-assets/d9b1a1e71a464889b7cc604b1849fb9b/a-space-for-the-unbound-1oj8p.png" alt="ini foto" class="photo">
+                </div>
+                <p class="card-capt center sml">A Space For The Unbound</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://imgproxy.eneba.games/QRLzdBWio_RnVHu-HVoaigiFx4FsBGMl79k6bjxImKs/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy95/M0RfbnUtZWVwRXg4/ckY0NUNFczFKdldr/andSeEdWWE50LXoz/WlhURmpNLmpwZw" alt="ini foto"
+                        class="photo">
+                </div>
+                <p class="card-capt center sml">1998 The Toll Keeper Story</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMzkxNTMxMDYtNmFhOC00NGEwLWJmMDYtMTM3N2E2NWE4MWFiXkEyXkFqcGc@._V1_.jpg" alt="ini foto"
+                        class="photo">
+                </div>
+                <p class="card-capt center sml">Coffee Talk</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://m.media-amazon.com/images/M/MV5BM2Q2YjRiZmMtODlkMy00Zjc3LWIyYTktOWM3ZDc4YzI2YTYwXkEyXkFqcGc@._V1_.jpg" alt="ini foto"
+                        class="photo">
+                </div>
+                <p class="card-capt center sml">Hades</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://e.snmc.io/lk/f/x/69b5f6f6c4240589120a3ebcfbdc26cf/11741917" alt="ini foto"
+                        class="photo">
+                </div>
+                <p class="card-capt center sml">Paper Lily Chapter 1</p>
+            </div>            
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</body>
+</html>
+```
+
+### CSS
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --per-view: 3;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-container {
+    overflow-x: hidden;
+    max-width: 1180px;
+    border: 1px solid black;
+}
+.inner-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (1.5rem * (var(--per-view) - 1))) / var(--per-view));
+    grid-gap: 1.5rem;
+    position: relative;
+    left: 0;
+    transition: .3s;
+}
+.inner-content>* {
+    aspect-ratio: 11 / 16;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    display: block;
+}
+.card {
+    border: 1px solid black;
+    background-color: white;
+}
+.photo {
+    width: 100%;
+    aspect-ratio: 11/16;
+    object-fit: cover;
+}
+.card-capt {
+    font-size: 23px;
+    text-align: center;
+    background-color: black;            
+    color: white;
+    padding: 5px 2px;
+}
+```
+
+### JavaScript
+
+```javascript
+const imageWrapper = $('.inner-content');
+const imageItems = $('.inner-content > *')
+const imageLength = imageItems.length
+const perView = 5
+let totalScroll = 0
+const delay = 2000
+for (let i = 0; i < perView; i++) {
+    $(imageWrapper).append(imageItems[i].outerHTML)
+}
+let autoScroll = setInterval(scrolling, delay)
+function scrolling() {
+    totalScroll++
+    if (totalScroll == imageLength + 1) {
+        clearInterval(autoScroll)
+        totalScroll = 1
+        imageWrapper.css({
+            'transition': '0s',
+            'left': '0'
+        })
+        autoScroll = setInterval(scrolling, delay)
+    }
+    const widthEl = document.querySelector('.inner-content > :first-child').offsetWidth + 24
+    imageWrapper.css({
+        'left': `-${totalScroll * widthEl}px`,
+        'transition': '.3s'
+    })
+}
 ```
